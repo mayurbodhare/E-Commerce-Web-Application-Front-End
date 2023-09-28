@@ -1,6 +1,6 @@
 import Signup from "../features/auth/components/Signup";
 
-function SugnUp() {
+function SignUp() {
     return ( 
         <div>
             <Signup />
@@ -8,4 +8,4 @@ function SugnUp() {
      );
 }
 
-export default SugnUp;
+export default SignUp;
