@@ -48,7 +48,9 @@
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-      "images": ["https://i.dummyjson.com/data/products/3/1.jpg"]
+      "images": [
+        "https://i.dummyjson.com/data/products/3/1.jpg"
+      ]
     },
     {
       "id": 4,
@@ -1426,7 +1428,9 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/78/thumbnail.jpg",
-      "images": ["https://i.dummyjson.com/data/products/78/thumbnail.jpg"]
+      "images": [
+        "https://i.dummyjson.com/data/products/78/thumbnail.jpg"
+      ]
     },
     {
       "id": 79,
@@ -1439,7 +1443,9 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/79/thumbnail.jpg",
-      "images": ["https://i.dummyjson.com/data/products/79/1.jpg"]
+      "images": [
+        "https://i.dummyjson.com/data/products/79/1.jpg"
+      ]
     },
     {
       "id": 80,
@@ -2226,7 +2232,7 @@
       "checked": false
     }
   ],
-  "categories" : [
+  "categories": [
     {
       "value": "smartphones",
       "label": "Smartphones",
@@ -2256,6 +2262,23 @@
       "value": "home-decoration",
       "label": "Home decoration",
       "checked": false
+    }
+  ],
+  "users": [
+    {
+      "email": "mrbodhre7@gmail.com",
+      "password": "Mayur@123",
+      "id": 1
+    },
+    {
+      "email": "qwertyu@gh.vom",
+      "password": "qwertyu",
+      "id": 2
+    },
+    {
+      "email": "newbmayur@gmail.com",
+      "password": "Mayur@123",
+      "id": 3
     }
   ]
 }
