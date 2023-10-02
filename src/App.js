@@ -18,11 +18,30 @@ import Protected from './features/auth/components/Protected';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchItemsByUserIdAsync } from './features/cart/cartSlice';
 import { selectLoggedInUser } from './features/auth/authSlice';
+import PageNotFound from './pages/404';
+import OrderSuccessfullPage from './pages/orderSuccessPage';
+import UserProfile from './features/user/components/UserProfile';
+import UserOrdersPage from './pages/UserOrdersPage';
+import UserProfilePage from './pages/UserProfilePage';
+import { fetchLoggedInUserAsync } from './features/user/userSlice';
+import Logout from './features/auth/components/Logout';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import AdminHomePage from './pages/AdminHomePage';
+import ProtectedAdmin from './features/auth/components/ProtectedAdmin';
+import AdminProductDetailPage from './pages/AdminProductFormPage';
+import ProductForm from './features/admin/components/ProductForm';
+import AdminProductFormPage from './pages/AdminProductFormPage';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Protected><HomePage/></Protected>,
   },
+
+  {
+    path: "/admin",
+    element: <ProtectedAdmin><AdminHomePage/></ProtectedAdmin>,
+  },
+
   {
     path: "/login",
     element: <LoginPage />,
@@ -45,6 +64,51 @@ const router = createBrowserRouter([
     element: <Protected><ProductDetailPage /></Protected>,
   },
 
+  {
+    path: "/admin/product-detail/:id",
+    element: <ProtectedAdmin><AdminProductDetailPage /></ProtectedAdmin>,
+  },
+
+  {
+    path: "/admin/product-form",
+    element: <ProtectedAdmin><AdminProductFormPage /></ProtectedAdmin>,
+  },
+  
+  {
+    path: "/admin/product-form/edit/:id",
+    element: <ProtectedAdmin><AdminProductFormPage /></ProtectedAdmin>,
+  },
+
+  {
+    path: "/order-success/:id",
+    element: <OrderSuccessfullPage />,
+  },
+  
+  {
+    path: "/orders",
+    element: <UserOrdersPage />,
+  },
+
+  {
+    path: "/profile",
+    element: <UserProfilePage />,
+  },
+
+  {
+    path: "/logout",
+    element: <Logout />,
+  },
+
+  {
+    path: "/forgot-password",
+    element: <ForgotPasswordPage />,
+  },
+
+  {
+    path: "*",
+    element: <PageNotFound></PageNotFound>,
+  },
+
 ]);
 
 function App() {
@@ -53,9 +117,10 @@ function App() {
 
   useEffect(()=>{
     if(user){
-      dispatch(fetchItemsByUserIdAsync(user.id))
+      dispatch(fetchItemsByUserIdAsync(user.id));
+      dispatch(fetchLoggedInUserAsync(user.id));
     }
-  }, [dispatch,user?user.id:user])
+  }, [dispatch,user])
   
   return (
     <div className="App">
