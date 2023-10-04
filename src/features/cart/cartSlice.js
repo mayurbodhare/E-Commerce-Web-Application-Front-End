@@ -104,6 +104,7 @@ export const counterSlice = createSlice({
 
 export const { increment } = counterSlice.actions;
 
-export const selectItems = (state) => state.cart.items
+export const selectItems = (state) => state.cart.items;
+export const selectCartStaus = (state) => state.cart.status;
 
 export default counterSlice.reducer;
